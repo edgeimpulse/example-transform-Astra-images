@@ -4,6 +4,9 @@
 
 An Edge Impulse custom synthetic data block that generates images with GPT-6 Astra and GPT Image 2.5 and uploads them to your project. In Studio it appears as **Astra Synthetic Data**.
 
+<img width="3410" height="2052" alt="image" src="https://github.com/user-attachments/assets/552fa079-0f7e-482f-ae01-50c9188ae992" />
+
+
 Custom synthetic data blocks require the Edge Impulse Enterprise plan. They run without input files: Studio passes parameters and environment variables to the container, and the container uploads what it generates through the Ingestion API.
 
 [transform.py](transform.py) calls the OpenAI Responses API with `gpt-6-astra` and the `image_generation` tool, using `gpt-image-2.5-sunburst` or `gpt-image-2.5-flare`. It checks that each result is a valid PNG, then uploads it to Edge Impulse. [synthetic_blocks_tutorial.md](synthetic_blocks_tutorial.md) walks through the code and how to extend it.
