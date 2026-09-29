@@ -1,0 +1,77 @@
+{
+    "version": 1,
+    "type": "synthetic-data",
+    "info": {
+        "name": "Astra Synthetic Data",
+        "description": "Generate synthetic images with GPT-6 Astra and GPT Image"
+    },
+    "parameters": [
+        {
+            "name": "OpenAI API Key",
+            "value": "",
+            "type": "secret",
+            "help": "An OpenAI API key with access to GPT-6 Astra and GPT Image.",
+            "param": "OPENAI_API_KEY"
+        },
+        {
+            "name": "Prompt",
+            "value": "A photo of a factory worker wearing a hard hat",
+            "type": "string",
+            "help": "Description used to generate each image.",
+            "param": "prompt",
+            "multiline": true
+        },
+        {
+            "name": "Label",
+            "value": "hard_hat",
+            "type": "string",
+            "help": "Label assigned to generated images in Edge Impulse.",
+            "param": "label"
+        },
+        {
+            "name": "Number of images",
+            "value": 3,
+            "type": "int",
+            "help": "Number of distinct images to generate.",
+            "param": "images"
+        },
+        {
+            "name": "Image model",
+            "value": "gpt-image-2.5-sunburst",
+            "type": "select",
+            "valid": [
+                {
+                    "label": "GPT Image 2.5 Sunburst",
+                    "value": "gpt-image-2.5-sunburst"
+                },
+                {
+                    "label": "GPT Image 2.5 Flare",
+                    "value": "gpt-image-2.5-flare"
+                }
+            ],
+            "help": "GPT Image model called by GPT-6 Astra.",
+            "param": "image-model"
+        },
+        {
+            "name": "Upload to category",
+            "value": "split",
+            "type": "select",
+            "valid": [
+                {
+                    "label": "Split 80/20 between training and testing",
+                    "value": "split"
+                },
+                {
+                    "label": "Training",
+                    "value": "training"
+                },
+                {
+                    "label": "Testing",
+                    "value": "testing"
+                }
+            ],
+            "help": "Category used when uploading generated images.",
+            "param": "upload-category"
+        }
+    ]
+}
