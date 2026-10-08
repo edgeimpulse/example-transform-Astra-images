@@ -9,6 +9,9 @@ An Edge Impulse custom synthetic data block that generates images with GPT-6 Ast
 
 Custom synthetic data blocks require the Edge Impulse Enterprise plan. They run without input files: Studio passes parameters and environment variables to the container, and the container uploads what it generates through the Ingestion API.
 
+* See also the AI Labeling Block: Zero-shot Object Detection with GPT-6 Astra - [https://github.com/edgeimpulse/example-transform-Astra-images#astra-synthetic-data-block](https://github.com/edgeimpulse/ai-labeling-zero-shot-object-detector-astra/blob/main/README.md)
+
+
 [transform.py](transform.py) calls the OpenAI Responses API with `gpt-6-astra` and the `image_generation` tool, using `gpt-image-2.5-sunburst` or `gpt-image-2.5-flare`. It checks that each result is a valid PNG, then uploads it to Edge Impulse. [synthetic_blocks_tutorial.md](synthetic_blocks_tutorial.md) walks through the code and how to extend it.
 
 ## Requirements
